@@ -1,0 +1,49 @@
+//Create a Program that takes a strings from the user input and converts a the vowels into Uppercase.
+
+#include <stdio.h>
+#include <string.h>
+
+void vowelConsonantCount(char *string1)
+{
+    int i = 0, vowel = 0, consonant = 0;
+
+    printf("\nString Length: %d", strlen(string1));
+
+    for(i=0; string1[i]; i++)
+    {
+
+            if(string1[i] == 'a' || string1[i] == 'e' || string1[i] == 'i' || string1[i] =='o' || string1[i] == 'u' || string1[i] == 'A' || string1[i] == 'E' || string1[i] == 'I' || string1[i] =='O' || string1[i] == 'U')
+                vowel++;
+            else
+                consonant++;
+        
+    }
+
+    printf("\nVowels: %d", vowel);
+    printf("\nConsonants: %d", consonant);
+}
+
+
+int main() {
+    char string1[255];
+    int i = 0;
+
+    printf("Input a sentence: ");
+    gets(string1, sizeof(string1), stdin);
+
+    while(string1[i] != '\0')
+    {
+        if(string1[i] == 'a' || string1[i] == 'e' || string1[i] == 'i' || string1[i] == 'o' || string1[i] == 'u')
+        
+            string1[i] = string1[i]-32;
+                i++;
+        
+    
+    }
+    printf("String Converted: ");
+    puts(string1);
+
+    vowelConsonantCount(string1);
+
+    return 0;
+}
